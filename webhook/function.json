@@ -1,0 +1,24 @@
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "marvinisms",
+      "type": "table",
+      "tableName": "Quotes",
+      "partitionKey": "{project-id}",
+      "take": 100,
+      "filter": "%%filter",
+      "storageAccount": "slackbotstorage_STORAGE",
+      "direction": "in"
+    }
+  ]
+}
